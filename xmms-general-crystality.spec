@@ -1,5 +1,5 @@
-Summary:	Realtime plugin for remastering mp3 sound
-Summary(pl):	Wtyczka poprawiaj±ca jako¶æ odtwarzania plików mp3
+Summary:	Realtime plugin for remastering MP3 sound
+Summary(pl):	Wtyczka poprawiaj±ca jako¶æ odtwarzania plików MP3
 Name:		xmms-general-crystality
 Version:	0.92
 Release:	4
