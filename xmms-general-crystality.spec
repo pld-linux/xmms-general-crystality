@@ -6,8 +6,10 @@ Release:	1
 License:	GPL v2
 Group:		X11/Applications/Multimedia
 Source0:	http://fanthom.math.put.poznan.pl/~gyver/crystality/crystality-plugin-%{version}.tar.gz
+Patch0:		%{name}-Makefile.patch
 URL:            http://fanthom.math.put.poznan.pl/~gyver/crystality/
 BuildRequires:	xmms-devel >= 1.2.0
+Requires:	xmms
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	crystality-plugin
 
@@ -29,9 +31,10 @@ Ta wtyczka wykonuje spe³nia g³ównie cztery zadania:
 
 %prep
 %setup -q -n crystality-plugin-%{version}
+%patch0 -p1
 
 %build
-%{__make}
+%{__make} CC="%{__cc}" CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
