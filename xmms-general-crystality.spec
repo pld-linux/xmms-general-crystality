@@ -40,7 +40,7 @@ Ta wtyczka wykonuje spe³nia g³ównie cztery zadania:
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_xmms_plugin_dir}}
 
-#%{__make} install \
+#%%{__make} install \
 #	XMMS_PLUGIN=$RPM_BUILD_ROOT%{_libdir}/xmms/General
 #	STDIO_PLUGIN=$RPM_BUILD_ROOT%{__bindir}/crystality-stdio
 install libcrystality.so $RPM_BUILD_ROOT%{_xmms_plugin_dir}/libcrystality.so
