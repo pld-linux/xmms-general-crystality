@@ -1,0 +1,54 @@
+Summary:	Realtime plugin for remastering mp3 sound
+Summary(pl):	Wtyczka poprawiaj±ca jako¶æ odtwarzania plików mp3
+Name:		xmms-general-crystality
+Version:	0.92
+Release:	1
+License:	GPL v2
+Group:		X11/Applications/Multimedia
+Source0:	http://fanthom.math.put.poznan.pl/~gyver/crystality/crystality-plugin-%{version}.tar.gz
+URL:            http://fanthom.math.put.poznan.pl/~gyver/crystality/
+BuildRequires:	xmms-devel >= 1.2.0
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Obsoletes:	crystality-plugin
+
+%define         _prefix         /usr/X11R6
+
+%description
+This plugin does mainly four things: 
+- adds some sounds in very high frequency range,
+- adds some even harmonic distortions,
+- adds simple, but nice 3D echo,
+- extends stereo.
+
+%description -l pl
+Ta wtyczka wykonuje spe³nia g³ównie cztery zadania:
+- dodaje d¿wiêki w bardzo wysokim zakresie czêstotliwo¶ci,
+- dodaje pewne harmoniczne zniekszta³cenia,
+- dodaje prosty efekt echa 3D,
+- rozszerzone stereo.
+
+%prep
+%setup -q -n crystality-plugin-%{version}
+
+%build
+%{__make}
+
+%install
+rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir}/xmms/General}
+
+#%{__make} install \
+#	XMMS_PLUGIN=$RPM_BUILD_ROOT%{_libdir}/xmms/General
+#	STDIO_PLUGIN=$RPM_BUILD_ROOT%{__bindir}/crystality-stdio
+install libcrystality.so $RPM_BUILD_ROOT%{_libdir}/xmms/General/libcrystality.so
+install crystality-stdio $RPM_BUILD_ROOT%{_bindir}/crystality-stdio
+
+gzip -9nf README
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(644,root,root,755)
+%doc *.gz
+%{_libdir}/xmms/General/*
