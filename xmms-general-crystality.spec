@@ -8,6 +8,7 @@ Group:		X11/Applications/Sound
 Source0:	http://fanthom.math.put.poznan.pl/~gyver/crystality/crystality-plugin-%{version}.tar.gz
 # Source0-md5:	960d69bc3b0c90f4aca2631b35417c73
 Patch0:		%{name}-Makefile.patch
+Patch1:		%{name}-gcc33.patch
 URL:		http://fanthom.math.put.poznan.pl/~gyver/crystality/
 BuildRequires:	rpmbuild(macros) >= 1.125
 BuildRequires:	xmms-devel >= 1.2.0
@@ -32,6 +33,7 @@ Ta wtyczka wykonuje spe³nia g³ównie cztery zadania:
 %prep
 %setup -q -n crystality-plugin-%{version}
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__make} \
@@ -54,4 +56,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README
+%attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{xmms_general_plugindir}/*
