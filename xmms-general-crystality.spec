@@ -2,7 +2,7 @@ Summary:	Realtime plugin for remastering mp3 sound
 Summary(pl):	Wtyczka poprawiaj±ca jako¶æ odtwarzania plików mp3
 Name:		xmms-general-crystality
 Version:	0.92
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications/Sound
 Source0:	http://fanthom.math.put.poznan.pl/~gyver/crystality/crystality-plugin-%{version}.tar.gz
@@ -13,6 +13,7 @@ Requires:	xmms
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	crystality-plugin
 
+%define		_xmms_plugin_dir	%(xmms-config --general-plugin-dir)
 
 %description
 This plugin does mainly four things: 
@@ -37,12 +38,12 @@ Ta wtyczka wykonuje spe³nia g³ównie cztery zadania:
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir}/xmms/General}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_xmms_plugin_dir}}
 
 #%{__make} install \
 #	XMMS_PLUGIN=$RPM_BUILD_ROOT%{_libdir}/xmms/General
 #	STDIO_PLUGIN=$RPM_BUILD_ROOT%{__bindir}/crystality-stdio
-install libcrystality.so $RPM_BUILD_ROOT%{_libdir}/xmms/General/libcrystality.so
+install libcrystality.so $RPM_BUILD_ROOT%{_xmms_plugin_dir}/libcrystality.so
 install crystality-stdio $RPM_BUILD_ROOT%{_bindir}/crystality-stdio
 
 %clean
@@ -51,4 +52,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README
-%{_libdir}/xmms/General/*
+%attr(755,root,root) %{_xmms_plugin_dir}/*
