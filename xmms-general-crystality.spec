@@ -24,7 +24,7 @@ This plugin does mainly four things:
 - extends stereo.
 
 %description -l pl
-Ta wtyczka wykonuje spe³nia g³ównie cztery zadania:
+Ta wtyczka wykonuje g³ównie cztery zadania:
 - dodaje d¼wiêki w bardzo wysokim zakresie czêstotliwo¶ci,
 - dodaje pewne harmoniczne zniekszta³cenia,
 - dodaje prosty efekt echa 3D,
