@@ -17,7 +17,7 @@ Obsoletes:	crystality-plugin
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This plugin does mainly four things: 
+This plugin does mainly four things:
 - adds some sounds in very high frequency range,
 - adds some even harmonic distortions,
 - adds simple, but nice 3D echo,
