@@ -2,10 +2,11 @@ Summary:	Realtime plugin for remastering mp3 sound
 Summary(pl):	Wtyczka poprawiaj±ca jako¶æ odtwarzania plików mp3
 Name:		xmms-general-crystality
 Version:	0.92
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		X11/Applications/Sound
 Source0:	http://fanthom.math.put.poznan.pl/~gyver/crystality/crystality-plugin-%{version}.tar.gz
+# Source0-md5:	960d69bc3b0c90f4aca2631b35417c73
 Patch0:		%{name}-Makefile.patch
 URL:            http://fanthom.math.put.poznan.pl/~gyver/crystality/
 BuildRequires:	xmms-devel >= 1.2.0
