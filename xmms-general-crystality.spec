@@ -13,7 +13,6 @@ Requires:	xmms
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	crystality-plugin
 
-%define         _prefix         /usr/X11R6
 
 %description
 This plugin does mainly four things: 
