@@ -1,0 +1,29 @@
+--- crystality-plugin-0.92/Makefile~	Mon Aug 13 01:41:14 2001
++++ crystality-plugin-0.92/Makefile	Sat May  4 14:07:57 2002
+@@ -7,21 +7,21 @@
+ STDIO_PLUGIN=	crystality-stdio
+ STDIO_LIBS=	-lpthread $(shell gtk-config --libs)
+ 
+-CFLAGS= -s -mpentium -O6 -Wall -ffast-math -fomit-frame-pointer -finline-functions -fexpensive-optimizations $(GTK_CFLAGS)
+-
++CFLAGS= -s -mpentium -O6 -Wall -ffast-math -fomit-frame-pointer -finline-functions -fexpensive-optimizations
++CC=cc
+ 
+ TARGETS=	$(XMMS_PLUGIN) $(STDIO_PLUGIN)
+ 
+ all	: $(TARGETS)
+ 
+ $(STDIO_PLUGIN): crystality.o gui.o stdio.o
+-	cc $(CFLAGS) -o$(STDIO_PLUGIN) $(STDIO_LIBS) crystality.o gui.o stdio.o -lpthread
++	$(CC) $(CFLAGS) $(GTK_CFLAGS) -o$(STDIO_PLUGIN) $(STDIO_LIBS) crystality.o gui.o stdio.o -lpthread
+ 
+ $(XMMS_PLUGIN): crystality.o gui.o xmms.o
+-	cc $(CFLAGS) -o$(XMMS_PLUGIN) -shared -fPIC crystality.o gui.o xmms.o
++	$(CC) $(CFLAGS) $(GTK_CFLAGS) -o$(XMMS_PLUGIN) -shared -fPIC crystality.o gui.o xmms.o
+ 
+ .c.o	:
+-	cc $(CFLAGS) -c $<
++	$(CC) $(CFLAGS) $(GTK_CFLAGS) -c $<
+ 
+ clean	: 
+ 	rm -f $(TARGETS) core *\.o
