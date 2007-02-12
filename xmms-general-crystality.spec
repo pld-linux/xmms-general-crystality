@@ -1,5 +1,5 @@
 Summary:	Realtime XMMS plugin for remastering MP3 sound
-Summary(pl):	Wtyczka dla XMMS-a poprawiaj±ca jako¶æ odtwarzania plików MP3
+Summary(pl.UTF-8):   Wtyczka dla XMMS-a poprawiajÄ…ca jakoÅ›Ä‡ odtwarzania plikÃ³w MP3
 Name:		xmms-general-crystality
 Version:	0.92
 Release:	4
@@ -23,10 +23,10 @@ This plugin does mainly four things:
 - adds simple, but nice 3D echo,
 - extends stereo.
 
-%description -l pl
-Ta wtyczka wykonuje g³ównie cztery zadania:
-- dodaje d¼wiêki w bardzo wysokim zakresie czêstotliwo¶ci,
-- dodaje pewne harmoniczne zniekszta³cenia,
+%description -l pl.UTF-8
+Ta wtyczka wykonuje gÅ‚Ã³wnie cztery zadania:
+- dodaje dÅºwiÄ™ki w bardzo wysokim zakresie czÄ™stotliwoÅ›ci,
+- dodaje pewne harmoniczne znieksztaÅ‚cenia,
 - dodaje prosty efekt echa 3D,
 - rozszerzone stereo.
 
