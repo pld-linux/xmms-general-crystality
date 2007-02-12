@@ -1,5 +1,5 @@
 Summary:	Realtime XMMS plugin for remastering MP3 sound
-Summary(pl.UTF-8):   Wtyczka dla XMMS-a poprawiająca jakość odtwarzania plików MP3
+Summary(pl.UTF-8):	Wtyczka dla XMMS-a poprawiająca jakość odtwarzania plików MP3
 Name:		xmms-general-crystality
 Version:	0.92
 Release:	4
