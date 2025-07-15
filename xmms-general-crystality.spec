@@ -32,8 +32,8 @@ Ta wtyczka wykonuje głównie cztery zadania:
 
 %prep
 %setup -q -n crystality-plugin-%{version}
-%patch0 -p1
-%patch1 -p1
+%patch -P0 -p1
+%patch -P1 -p1
 
 %build
 %{__make} \
